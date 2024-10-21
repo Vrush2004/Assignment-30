@@ -1,12 +1,14 @@
-const quantityEle = document.getElementById("quantity")
+const quantityElements = document.getElementsByClassName("quantity")
 
-function inc(){
-    let quantity  = parseInt(quantityEle.innerText)
-    quantityEle.innerText = ++quantity;
+function inc(event){
+    const quantityContainer = event.target.parentElement.querySelector(".quantity");
+    let quantity = parseInt(quantityContainer.innerText);
+    quantityContainer.innerText = ++quantity;
 }
-function dec(){
-    let quantity  = parseInt(quantityEle.innerText)
-    if(quantity > 1){
-        quantityEle.innerText = --quantity;
+function dec(event){
+    const quantityContainer = event.target.parentElement.querySelector(".quantity");
+    let quantity = parseInt(quantityContainer.innerText);
+    if (quantity > 1) {
+        quantityContainer.innerText = --quantity;
     }
 }
